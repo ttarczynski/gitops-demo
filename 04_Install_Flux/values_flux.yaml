@@ -1,0 +1,4 @@
+git:
+  path: manifests
+  pollInterval: 30s
+  url: git@github.com:ttarczynski/gitops-demo.git

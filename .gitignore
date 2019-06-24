@@ -1,0 +1,5 @@
+get_helm.sh
+
+# vim swap files
+*.swp
+*.swo
