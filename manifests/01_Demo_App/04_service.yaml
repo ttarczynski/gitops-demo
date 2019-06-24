@@ -13,5 +13,5 @@ spec:
   selector:
     app/name: app
     app/instance: blue
-    app/version: "1.10"
+    app/version: "1.11"
   type: NodePort
