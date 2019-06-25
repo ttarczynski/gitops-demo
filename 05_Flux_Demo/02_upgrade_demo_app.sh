@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # 1. Monitor results (run in separate terminal):
-URL=$(minikube service --url -n demo demo)
-watch -n 1 "kubectl get pod -Lapp/name -L app/instance -L app/version; echo; curl $URL -s"
+URL=$(minikube service --url -n demo demo); watch -n 1 "kubectl get pod -Lapp/name -L app/instance -L app/version; echo; curl $URL -s"
 
 # 2. Change manifests:
 sed -i 's/1.10/1.11/g' ../manifests/01_Demo_App/*
