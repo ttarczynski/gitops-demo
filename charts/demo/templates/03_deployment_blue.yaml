@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-blue
+  namespace: demo
+  labels:
+    app/name: app
+    app/instance: blue
+    app/version: "{{ .Values.blue.image.tag }}"
+spec:
+  replicas: 3
+  replicas: {{ .Values.blue.replicaCount }}
+  selector:
+    matchLabels:
+      app/name: app
+      app/instance: blue
+  template:
+    metadata:
+      labels:
+        app/name: app
+        app/instance: blue
+        app/version: "{{ .Values.blue.image.tag }}"
+    spec:
+      containers: 
+        - name: nginx
+          image: "nginx:{{ .Values.blue.image.tag }}"
+          ports:
+            - name: http
+              containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 1
+          volumeMounts:
+          - name: html
+            mountPath: /usr/share/nginx/html/
+      volumes:
+        - name: html
+          configMap:
+            name: content-blue

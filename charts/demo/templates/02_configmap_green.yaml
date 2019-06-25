@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: content-green
+  namespace: demo
+data:
+  index.html: |
+    app/instance: green
+    app/name: app
+    app/version: {{ .Values.green.image.tag }}

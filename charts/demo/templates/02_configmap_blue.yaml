@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: content-blue
+  namespace: demo
+data:
+  index.html: |
+    app/instance: blue
+    app/name: app
+    app/version: {{ .Values.blue.image.tag }}
