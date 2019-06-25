@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Monitor results (run in separate terminal):
-  URL=$(minikube service --url -n demo demo); watch -n 1 "kubectl get namespace demo; echo; kubectl get pod -Lapp/name -L app/instance -L app/version; echo; curl $URL -s"
+  URL=$(minikube service --url -n demo demo); watch -n 1 "kubectl get pod -Lapp/name -L app/instance -L app/version; echo; curl $URL -s"
 
 # 2. Copy namespace and HelmRelease to /manifests
   cp 01_namespace.yaml 02_helm_release.yaml ../manifests/
