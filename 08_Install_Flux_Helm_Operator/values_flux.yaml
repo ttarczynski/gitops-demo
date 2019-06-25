@@ -1,0 +1,12 @@
+git:
+  path: manifests
+  pollInterval: 15s
+  url: git@github.com:ttarczynski/gitops-demo.git
+helmOperator:
+  chartsSyncInterval: 15s
+  create: true
+  git:
+    chartsPath: charts
+    pollInterval: 15s
+  logReleaseDiffs: true
+  createCRD: true
