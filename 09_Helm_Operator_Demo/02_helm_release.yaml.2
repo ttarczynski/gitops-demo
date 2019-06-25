@@ -1,0 +1,18 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: demo
+  namespace: demo
+spec:
+  releaseName: demo
+  chart:
+    git: git@github.com:ttarczynski/gitops-demo.git
+    ref: master
+    path: charts/demo
+  values:
+    green:
+      replicaCount: 2
+      image:
+        tag: "1.13"
+      service:
+        color: green
