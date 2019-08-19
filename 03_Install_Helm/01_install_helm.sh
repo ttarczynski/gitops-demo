@@ -22,4 +22,4 @@ kubectl create clusterrolebinding tiller-cluster-rule \
   --clusterrole=cluster-admin \
   --serviceaccount=kube-system:tiller 
 
-helm init --skip-refresh --upgrade --service-account tiller
+helm init --skip-refresh --upgrade --service-account tiller --history-max 10
