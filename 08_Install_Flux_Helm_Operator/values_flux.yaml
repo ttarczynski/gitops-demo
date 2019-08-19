@@ -10,3 +10,5 @@ helmOperator:
     pollInterval: 15s
   logReleaseDiffs: true
   createCRD: true
+syncGarbageCollection:
+  enabled: true
