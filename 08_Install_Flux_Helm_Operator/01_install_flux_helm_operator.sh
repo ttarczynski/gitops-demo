@@ -5,4 +5,4 @@
 helm upgrade --install flux \
 --namespace flux \
 --values ./values_flux.yaml \
-weaveworks/flux
+fluxcd/flux
