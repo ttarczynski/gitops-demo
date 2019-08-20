@@ -4,5 +4,5 @@
   find charts/demo/ | sort
 
 # 2. Render chart templates locally and write manifests to /tmp/demo
-  helm template ./ --output-dir /tmp
+  helm template ./charts/demo/ --output-dir /tmp
   find /tmp/demo/templates/ | sort

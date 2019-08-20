@@ -8,7 +8,6 @@ metadata:
     app/instance: green
     app/version: "{{ .Values.green.image.tag }}"
 spec:
-  replicas: 3
   replicas: {{ .Values.green.replicaCount }}
   selector:
     matchLabels:
