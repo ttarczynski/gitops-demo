@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # 1. Monitor results (run in separate terminal):
-  URL=$(minikube service --url -n demo demo); watch -n 1 "kubectl get pod -Lapp/name -L app/instance -L app/version; echo; curl $URL -s"
+  URL="http://$(minikube ip):30080";
+  watch -n 1 "kubectl get pod -n demo -Lapp/name -L app/instance -L app/version;
+  echo '----';
+  set -x;
+  curl $URL -s"
 
 # 2. Copy namespace and HelmRelease to /manifests
-  cp ./02_helm_release.yaml.1 ../manifests/02_helm_release.yaml
+  cp ./manifests/02_helm_release.yaml.1 ../manifests/02_helm_release.yaml
   git diff
 
 # 3. Commit the changes to GIT:
