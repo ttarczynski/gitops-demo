@@ -10,6 +10,9 @@
   cp ./manifests/*.yaml ../manifests/
   git status
 
+  vim ../manifests/01_namespace.yaml
+  vim ../manifests/02_helm_release.yaml
+
 # 3. Commit the changes to GIT:
   git add ../manifests/
   git commit --message="Release the demo app using Helm"
