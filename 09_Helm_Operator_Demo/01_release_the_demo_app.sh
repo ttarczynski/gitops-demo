@@ -1,17 +1,18 @@
 #!/bin/bash
 
-# 1. Monitor results (run in separate terminal):
-  URL="http://$(minikube ip):30080";
-  watch -n 1 "kubectl get pod -n demo -Lapp/name -L app/instance -L app/version;
-  echo '----';
-  curl $URL -s"
-
-# 2. Copy namespace and HelmRelease to /manifests
+# 1. Copy namespace and HelmRelease to /manifests
   cp ./manifests/*.yaml ../manifests/
   git status
 
   vim ../manifests/01_namespace.yaml
   vim ../manifests/02_helm_release.yaml
+
+# 2. Monitor results (run in separate terminal):
+  URL="http://$(minikube ip):30080";
+  watch -n 1 "kubectl get pod -n demo -Lapp/name -L app/instance -L app/version;
+  echo '----';
+  set -x;
+  curl $URL -s"
 
 # 3. Commit the changes to GIT:
   git add ../manifests/
