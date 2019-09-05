@@ -17,11 +17,10 @@
 
 # 4. Push to github and observe Flux logs:
   git push origin master
-  kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output=".+demo.+(created|configured).*"'
+  kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output="helmrelease.+demo.+deleted"'
 
-# 5. Remove the Helm Release Object and observe Flux Helm Operator Logs:
-  kubectl delete helmrelease demo
-  kubectl logs deployment/flux-helm-operator -n flux --since 5m  --follow | egrep demo
+# 5. Check Flux Helm Operator Logs:
+  kubectl logs deployment/flux-helm-operator -n flux --since 10m  --follow | egrep -i '(delete|deleted|deleting).+demo'
 
 # 6. See Helm Releases
   helm ls
