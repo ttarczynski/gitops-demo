@@ -17,10 +17,10 @@
 
 # 4. Push to github and observe Flux logs:
   git push origin master
-  kubectl logs -n flux deployment/flux --since 10m --follow | egrep demo
+  kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output=".+demo.+(created|configured).*"'
 
 # 5. See Flux Helm Operator logs:
-  kubectl logs deployment/flux-helm-operator -n flux --since 5m  --follow | egrep demo
+  kubectl logs -n flux deployment/flux-helm-operator --since 10m  --follow | egrep 'diff=.+demo|info="release demo:.+"'
 
 # 6. See Helm Releases
   helm ls
