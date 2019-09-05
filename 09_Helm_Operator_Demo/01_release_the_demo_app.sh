@@ -7,7 +7,7 @@
   curl $URL -s"
 
 # 2. Copy namespace and HelmRelease to /manifests
-  cp 01_namespace.yaml 02_helm_release.yaml ../manifests/
+  cp ./manifests/*.yaml ../manifests/
   git status
 
 # 3. Commit the changes to GIT:
