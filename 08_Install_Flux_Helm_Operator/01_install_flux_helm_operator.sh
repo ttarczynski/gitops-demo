@@ -2,7 +2,7 @@
 
 # 1. Enable Flux Helm Operator
 
-chart_version='0.14.0'
+chart_version='0.14.1'
 helm upgrade --install flux \
 --namespace flux \
 --values ./values_flux.yaml \
