@@ -12,4 +12,4 @@ git commit --message="Add Demo App to GitOps manifests"
 
 # 4. Push to github and observe Flux logs:
 git push origin master
-kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output=".+demo.+(created|configured)"'
+kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output=".+demo.+(created|configured).*"'

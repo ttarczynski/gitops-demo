@@ -16,4 +16,4 @@ git commit --message="Upgrade demo app to v1.11"
 
 # 4. Push to github and observe Flux logs:
 git push origin master
-kubectl logs -n flux deployment/flux --since 10m --follow | egrep '\\n.+demo.+(created|configured)'
+kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output=".+demo.+(created|configured).*"'

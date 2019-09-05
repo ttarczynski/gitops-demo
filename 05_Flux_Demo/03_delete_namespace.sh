@@ -8,4 +8,4 @@ curl $URL -s"
 
 # 2. Delete the demo namespace and observe Flux logs:
 kubectl delete namespaces demo --wait=false
-kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'demo.+(created)'
+kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output=".+demo.+(created|configured).*"'
