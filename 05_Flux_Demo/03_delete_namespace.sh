@@ -4,6 +4,7 @@
 URL=$(minikube service --url -n demo demo | sed 's/\* //');
 watch -n 1 "kubectl get namespace demo; echo; kubectl get pod -n demo -Lapp/name -L app/instance -L app/version;
 echo '----';
+set -x;
 curl $URL -s"
 
 # 2. Delete the demo namespace and observe Flux logs:
