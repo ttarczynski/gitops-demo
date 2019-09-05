@@ -11,8 +11,5 @@
 # 3. Push to github:
   git push origin master
 
-# 4. Remove the demo namespace
-  kubectl delete namespaces demo --wait=false
-
-# 5. See results:
+# 4. See results:
   kubectl get namespaces
