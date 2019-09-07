@@ -8,5 +8,5 @@ kubectl apply -f ./
 
 # 3. See the results (demo service):
 URL=$(minikube service --url -n demo demo)
-kubectl get pod -Lapp/name -L app/instance -L app/version
+kubectl get pod -n demo -Lapp/name -L app/instance -L app/version
 curl $URL -s
