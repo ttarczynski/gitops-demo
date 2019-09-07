@@ -6,7 +6,7 @@ metadata:
   labels:
     app/name: app
     app/instance: blue
-    app/version: "1.10"
+    app/version: "1.11"
 spec:
   replicas: 3
   selector:
@@ -18,11 +18,11 @@ spec:
       labels:
         app/name: app
         app/instance: blue
-        app/version: "1.10"
+        app/version: "1.11"
     spec:
       containers: 
         - name: nginx
-          image: nginx:1.10
+          image: nginx:1.11
           ports:
             - name: http
               containerPort: 80
