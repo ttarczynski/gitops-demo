@@ -2,5 +2,7 @@ git:
   path: manifests
   pollInterval: 15s
   url: git@github.com:ttarczynski/gitops-demo.git
+helmOperator:
+  createCRD: true
 syncGarbageCollection:
   enabled: true
