@@ -30,7 +30,7 @@ spec:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 10
+            initialDelaySeconds: 5
             periodSeconds: 1
           volumeMounts:
           - name: html
