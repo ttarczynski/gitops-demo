@@ -8,7 +8,7 @@ metadata:
     app/instance: blue
     app/version: "1.10"
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app/name: app
@@ -30,7 +30,7 @@ spec:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 10
+            initialDelaySeconds: 5
             periodSeconds: 1
           volumeMounts:
           - name: html
