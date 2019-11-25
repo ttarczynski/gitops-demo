@@ -2,6 +2,7 @@
 
 # 1. Show Flux deployment
   kubectl get deployments -n flux flux
+  kubectl describe deployments.apps -n flux flux | less
 
 # 2. Monitor results (run in separate terminal):
   watch -n 1 "kubectl get deployment,pod,service,configmap -n demo"
