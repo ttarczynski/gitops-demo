@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Show Flux deployment
-  kubectl get deployments -n flux flux flux-helm-operator
+  kubectl get deployments -n flux flux helm-operator
 
 # 2. Copy namespace and HelmRelease to /manifests
   cp ./manifests/*.yaml ../manifests/
