@@ -20,7 +20,7 @@
   kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output="helmrelease.+demo.+deleted"'
 
 # 5. Check Flux Helm Operator Logs:
-  kubectl logs deployment/helm-operator -n flux --since 10m  --follow | egrep -i '(delete|deleted|deleting).+demo'
+  kubectl logs deployment/helm-operator -n flux --since 10m  --follow | egrep -i 'demo.+(delete|deleted|deleting)'
 
 # 6. See Helm Releases
   helm ls
