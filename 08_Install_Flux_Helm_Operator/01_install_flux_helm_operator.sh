@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# 1. Enable Flux Helm Operator
+# 1. Install Flux Helm Operator
 
-chart_version='0.15.0'
-helm upgrade --install flux \
+chart_version='0.6.0'
+helm upgrade \
+--install helm-operator \
 --namespace flux \
---values ./values_flux.yaml \
+--values ./values_helm-operator.yaml \
 --version $chart_version \
-fluxcd/flux
+fluxcd/helm-operator
