@@ -26,7 +26,7 @@
   kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output=".+demo.+(created|configured).*"'
 
 # 6. See Flux Helm Operator logs:
-  kubectl logs deployment/flux-helm-operator -n flux --since 10m  --follow | egrep demo
+  kubectl logs deployment/helm-operator -n flux --since 10m  --follow | egrep demo
 
 # 7. See Helm Releases
   helm ls
