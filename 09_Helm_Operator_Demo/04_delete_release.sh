@@ -7,7 +7,7 @@
   set -x;
   curl $URL -s"
 
-# 2. Copy namespace and HelmRelease to /manifests
+# 2. Remove the HelmRelease from /manifests
   rm ../manifests/02_helm_release.yaml
   git status
 
