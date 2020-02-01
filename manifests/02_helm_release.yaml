@@ -9,3 +9,8 @@ spec:
     git: git@github.com:ttarczynski/gitops-demo.git
     ref: master
     path: charts/demo
+  values:
+    green:
+      replicaCount: 2
+      image:
+        tag: "1.13"
