@@ -29,4 +29,4 @@
   kubectl logs deployment/helm-operator -n flux --since 10m  --follow | egrep 'release=demo.+(action=install|succeeded)'
 
 # 7. See Helm Releases
-  helm ls
+  helm ls -n demo
