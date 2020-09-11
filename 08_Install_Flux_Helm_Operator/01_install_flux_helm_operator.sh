@@ -1,8 +1,12 @@
 #!/bin/bash
 
-# 1. Install Flux Helm Operator
+# 1. Install the HelmRelease Custom Resource Definition
 
-chart_version='0.6.0'
+chart_version='1.2.0'
+kubectl apply -f "https://raw.githubusercontent.com/fluxcd/helm-operator/${chart_version}/deploy/crds.yaml"
+
+# 2. Install Flux Helm Operator
+
 helm upgrade \
 --install helm-operator \
 --namespace flux \

@@ -1,7 +1,9 @@
 chartsSyncInterval: 15s
-createCRD: true
+createCRD: false
 logReleaseDiffs: true
 git:
   pollInterval: 15s
   ssh:
     secretName: flux-git-deploy
+helm:
+  versions: v3
