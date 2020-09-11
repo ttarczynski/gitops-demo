@@ -9,4 +9,4 @@ kubectl -n flux logs deployment/flux | grep identity.pub | cut -d '"' -f2
 #  click on Add deploy key, give it a Title,
 #  check Allow write access, paste the Flux public key and click Add key.
 #
-#   (see docs: https://docs.fluxcd.io/en/latest/tutorials/get-started-helm.html#giving-write-access)
+#   (see docs: https://docs.fluxcd.io/en/1.20.2/tutorials/get-started-helm/#giving-write-access)

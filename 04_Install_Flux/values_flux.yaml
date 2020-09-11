@@ -4,3 +4,5 @@ git:
   url: git@github.com:ttarczynski/gitops-demo.git
 syncGarbageCollection:
   enabled: true
+registry:
+  disableScanning: true

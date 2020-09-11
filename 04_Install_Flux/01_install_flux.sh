@@ -4,9 +4,12 @@
 
 helm repo add fluxcd https://charts.fluxcd.io
 
-# 2. Install Flux:
+# 2. Create the flux namespace:
+kubectl create namespace flux
 
-chart_version='1.1.0'
+# 3. Install Flux:
+
+chart_version='1.5.0'
 helm upgrade \
 --install flux \
 --namespace flux \
