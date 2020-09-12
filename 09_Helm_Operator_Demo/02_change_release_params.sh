@@ -24,4 +24,4 @@
 
 # 6. See Helm Releases
   helm ls -n demo
-  helm get values demo
+  helm get values -n demo demo
