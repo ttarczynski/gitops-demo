@@ -20,7 +20,7 @@
   kubectl logs -n flux deployment/flux --since 10m --follow | egrep 'output=".+demo.+(created|configured).*"'
 
 # 5. See Flux Helm Operator logs:
-  kubectl logs -n flux deployment/helm-operator --since 10m  --follow | egrep 'diff=.+demo|info="release demo:.+"'
+  kubectl logs -n flux deployment/helm-operator --since 10m  --follow | egrep '"running upgrade"|"upgrade succeeded"'
 
 # 6. See Helm Releases
   helm ls
