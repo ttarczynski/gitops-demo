@@ -23,5 +23,5 @@
   kubectl logs -n flux deployment/helm-operator --since 10m  --follow | egrep 'diff=.+demo|info="release demo:.+"'
 
 # 6. See Helm Releases
-  helm ls
+  helm ls -n demo
   helm get values demo

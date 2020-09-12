@@ -23,4 +23,4 @@
   kubectl logs deployment/helm-operator -n flux --since 10m  --follow | egrep -i 'demo.+(delete|deleted|deleting)'
 
 # 6. See Helm Releases
-  helm ls
+  helm ls -n demo
