@@ -11,6 +11,6 @@ spec:
     path: charts/demo
   values:
     green:
-      replicaCount: 2
+      replicaCount: 3
       image:
         tag: "1.13"
